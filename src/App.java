@@ -28,7 +28,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         boolean playing = true;
-        int turnCount = 0;
+        boolean turn = true;
         Scanner scn = new Scanner(System.in);
 
         while(playing) {
@@ -41,11 +41,11 @@ public class App {
             String temp = board[y][x];
             //ⵔ⬤⚪⚫
 
-            if(turnCount % 2 == 0){
+            if(turn == true){
                 switch (temp) { 
                 case "+":
                     board[y-1][x-1] = "o";
-                    turnCount++;
+                    turn = !turn;
                     break;
                 case "o":
                     System.out.print("Invalid Placement");
@@ -57,11 +57,11 @@ public class App {
                     break;
                 }
             }
-            else if(turnCount % 2 != 0) {
+            else if(turn == false) {
                 switch (temp) { 
                 case "+":
                     board[y-1][x-1] = "@";
-                    turnCount++;
+                    turn = !turn;
                     break;
                 case "o":
                     System.out.print("Invalid Placement");
