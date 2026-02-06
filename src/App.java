@@ -48,10 +48,10 @@ public class App {
                     turn = !turn;
                     break;
                 case "o":
-                    System.out.print("Invalid Placement");
+                    System.out.println("Invalid Placement");
                     break;
                 case "@":
-                    System.out.print("Invalid Placement");
+                    System.out.println("Invalid Placement");
                     break;
                 default:
                     break;
@@ -64,10 +64,10 @@ public class App {
                     turn = !turn;
                     break;
                 case "o":
-                    System.out.print("Invalid Placement");
+                    System.out.println("Invalid Placement");
                     break;
                 case "@":
-                    System.out.print("Invalid Placement");
+                    System.out.println("Invalid Placement");
                     break;
                 default:
                     break;
