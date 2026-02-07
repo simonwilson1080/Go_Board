@@ -1,3 +1,11 @@
+/*********************************************************
+ * Compilation: javac App.java
+ * Execution:   java App.java
+ * 
+ * A simple GO Board
+*********************************************************/
+
+
 import java.util.Scanner;
 
 public class App {
