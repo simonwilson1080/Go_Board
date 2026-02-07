@@ -1,6 +1,5 @@
 /*********************************************************
- * Compilation: javac App.java
- * Execution:   java App.java
+ * Author: Simon Wilson
  * 
  * A simple GO Board
 *********************************************************/
@@ -13,31 +12,22 @@ import java.util.Scanner;
 public class App {
 
     static String[][] board = new String[9][9];
-    static String[][] gui_board = {
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-    };
+
     static int GAP = 30;
     static int MARGIN = 10;
     static boolean blackTurn = true;
 
+    //printing out CLI GO Board
     static void printGoBoard(String[][] board) {
-        for(int i = 0; i < board.length; i++){
-            for(int j = 0; j < board.length; j++){
-                if(board[i][j] == null){
+        for (int i = 0; i < board.length; i++){
+            for (int j = 0; j < board.length; j++){
+                if (board[i][j] == null){
                     System.out.print(" + ");
                 }
-                else if(board[i][j] == "o"){
+                else if (board[i][j] == "o"){
                     System.out.print(" o ");
                 }
-                else if(board[i][j] == "@"){
+                else if (board[i][j] == "@"){
                     System.out.print(" @ ");
                 }
                 else{
@@ -50,7 +40,7 @@ public class App {
 
     static void showUI(String[][] args) throws Exception {
 
-        JFrame frame = new JFrame("Go");
+        JFrame frame = new JFrame("Simon's Green GO Board");
         frame.setSize(GAP * board.length, (GAP+2) * board.length);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setBackground(new java.awt.Color(123, 150, 84));
@@ -72,7 +62,7 @@ public class App {
         frame.add(new Component() {
             public void paint(Graphics g) {
 
-                //Board
+                //Grid
                 g.setColor(Color.BLACK);
                 for (int i = 0; i < board.length; i++) {
                     g.drawLine(MARGIN, MARGIN + i * GAP, MARGIN + (board.length-1) * GAP, MARGIN + i * GAP);
@@ -100,30 +90,31 @@ public class App {
         // Calls function for GUI
         showUI(board);
 
-        /************************************************
-         * CLI LOGIC
-         * 
+        /**********************************************************
+        * CLI LOGIC 
         boolean playing = true;
         boolean turn = true;
+        boolean valid = true;
+        int x = 1;
+        int y = 1;
         Scanner scn = new Scanner(System.in);
 
-        while(playing) {
+
+        while (playing) {
             printGoBoard(board);
-                if(turn == true) {
-                    System.out.println("Whites Turn");
-                }
-                else if(turn == false) {
-                    System.out.println("Blacks Turn");
-                }
+
+            if (turn == true) System.out.println("Whites Turn");
+            else if (turn == false) System.out.println("Blacks Turn");
+
             System.out.print("Enter X coordinates:");
-            int x = scn.nextInt();
+            x = scn.nextInt();
             System.out.print("Enter Y coordinates:");
-            int y = scn.nextInt();
+            y = scn.nextInt();
 
             String temp = board[y-1][x-1];
             //ⵔ⬤⚪⚫
 
-            if(turn == true) {
+            if (turn == true) {
                 switch (temp) { 
                 case null:
                     board[y-1][x-1] = "o";
@@ -139,7 +130,7 @@ public class App {
                     break;
                 }
             }
-            else if(turn == false) {
+            else if (turn == false) {
                 switch (temp) { 
                 case null:
                     board[y-1][x-1] = "@";
@@ -159,6 +150,6 @@ public class App {
         
         }
         scn.close();
-        ************************************************************/
+        ************************************************************************/
     }
 }
