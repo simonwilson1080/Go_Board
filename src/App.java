@@ -46,7 +46,7 @@ public class App {
             System.out.print("Enter Y coordinates:");
             int y = scn.nextInt();
 
-            String temp = board[y][x];
+            String temp = board[y-1][x-1];
             //ⵔ⬤⚪⚫
 
             if(turn == true){
