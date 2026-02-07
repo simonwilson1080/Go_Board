@@ -41,6 +41,12 @@ public class App {
 
         while(playing) {
             printGoBoard(board);
+                if(turn == true) {
+                    System.out.println("Whites Turn");
+                }
+                else if(turn == false) {
+                    System.out.println("Blacks Turn");
+                }
             System.out.print("Enter X coordinates:");
             int x = scn.nextInt();
             System.out.print("Enter Y coordinates:");
@@ -56,10 +62,10 @@ public class App {
                     turn = !turn;
                     break;
                 case "o":
-                    System.out.println("Invalid Placement");
+                    System.out.println("INVALID PLACEMENT - Try Again");
                     break;
                 case "@":
-                    System.out.println("Invalid Placement");
+                    System.out.println("INVALID PLACEMENT - Try Again");
                     break;
                 default:
                     break;
@@ -72,10 +78,10 @@ public class App {
                     turn = !turn;
                     break;
                 case "o":
-                    System.out.println("Invalid Placement");
+                    System.out.println("INVALID PLACEMENT - Try Again");
                     break;
                 case "@":
-                    System.out.println("Invalid Placement");
+                    System.out.println("INVALID PLACEMENT - Try Again");
                     break;
                 default:
                     break;
