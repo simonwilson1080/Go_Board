@@ -53,7 +53,7 @@ public class App {
         JFrame frame = new JFrame("Go");
         frame.setSize(GAP * board.length, (GAP+2) * board.length);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.getContentPane().setBackground();
+        frame.getContentPane().setBackground(new java.awt.Color(123, 150, 84));
 
         //Mouse interaction
         frame.addMouseListener(new MouseAdapter() {
