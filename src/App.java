@@ -90,8 +90,8 @@ public class App {
         // Calls function for GUI
         showUI(board);
 
-        /**********************************************************
-        * CLI LOGIC 
+        
+        //CLI LOGIC 
         boolean playing = true;
         boolean turn = true;
         boolean valid = true;
@@ -150,6 +150,5 @@ public class App {
         
         }
         scn.close();
-        ************************************************************************/
     }
 }
